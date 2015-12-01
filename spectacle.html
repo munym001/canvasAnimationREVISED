@@ -92,16 +92,13 @@
 			context.fillStyle = drop.color;
 			context.fill();
 	  }
-	  function drawText(275, 60, my_string) {
-	  	string = 'my_string'
-	  	typedLetters = 0;
+	  function drawText() {
 		context.fillStyle = 'white';
 		context.globalCompositeOperation="source-over";
 		context.font = 'bold 5em sans-serif';
 		context.textAlign = 'right';
 		context.textBaseline = "middle";
 		context.fillText('A Visual Spectacle!', canvas.width-275, canvas.height-60);
-		if (typedLetters < string.length(my_string)) {typedLetters++};
 	}
       function resizeCanvas() {
         canvas.width = window.innerWidth-20;
@@ -138,16 +135,10 @@
 		//converts from degrees to radians and returns
 		return (degrees * Math.PI)/180;
 	}
-	window.onload = function(){
-	 canvas = document.getElementById('canvas');
-     context = canvas.getContext('2d');
-
-    drawText();
-    timer = setInterval(drawText(), 200);
-
-	}
+	window.onload = init;
+	 
 </script>
 </head>
-<body onload="init";>
+<body>
 <canvas id='canvas' width=500 height=500></canvas>
 </body>	  
